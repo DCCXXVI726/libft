@@ -6,7 +6,7 @@
 /*   By: thorker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 18:25:21 by thorker           #+#    #+#             */
-/*   Updated: 2018/12/03 19:10:30 by thorker          ###   ########.fr       */
+/*   Updated: 2019/01/14 21:39:48 by thorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-
+# include "get_next_line.h"
 typedef struct		s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+void				ft_filedel(t_file **file, int fd);
 t_list				*ft_lstaddlast(t_list **begin_list, t_list *new);
 int					ft_lstcount(t_list *begin_list);
 int					ft_power(int nbr, int power);

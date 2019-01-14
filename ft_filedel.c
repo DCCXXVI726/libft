@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_filedel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thorker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/29 20:11:57 by thorker           #+#    #+#             */
-/*   Updated: 2019/01/14 21:38:25 by thorker          ###   ########.fr       */
+/*   Created: 2019/01/14 21:24:55 by thorker           #+#    #+#             */
+/*   Updated: 2019/01/14 21:37:49 by thorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 32
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+#include "get_next_line.h"
 
-typedef struct		s_file
+void	ft_filedel(t_file **file, int fd)
 {
-	int				readed;
-	int				fd;
-	char			*line;
-	size_t			index;
-	struct s_file	*next;
-}					t_file;
-int					get_next_line(const int fd, char **line);
-#endif
+	t_file	*curr;
+	t_file	*next;
+
+	curr = *file;
+	next = curr->next;
+	while (curr != 0 && next != 0)
+	{
+		if (next->fd == fd)
+		{
+			next = next->next;
+			free(curr->line);
+			free(curr->next);
+			curr->next = next;
+			return ;
+		}
+		curr = next;
+		next = curr->next;
+	}
+	free(curr->line);
+	free(curr);
+	*file = NULL;
+}

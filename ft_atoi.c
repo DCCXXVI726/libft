@@ -6,13 +6,13 @@
 /*   By: thorker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 19:12:56 by thorker           #+#    #+#             */
-/*   Updated: 2018/12/03 19:06:59 by thorker          ###   ########.fr       */
+/*   Updated: 2019/01/17 12:54:34 by thorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_skip(const char *c)
+int		ft_skip(const char *c)
 {
 	int i;
 
@@ -23,7 +23,7 @@ static int	ft_skip(const char *c)
 	return (i);
 }
 
-int			ft_atoi(const char *c)
+int		ft_atoi(const char *c)
 {
 	int			i;
 	long long	re;

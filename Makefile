@@ -6,7 +6,7 @@
 #    By: thorker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 17:47:33 by thorker           #+#    #+#              #
-#    Updated: 2019/01/17 14:45:31 by thorker          ###   ########.fr        #
+#    Updated: 2019/01/17 14:46:20 by thorker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ test_%:
 	gcc $(FLAGS) test/$@.c libft.a -o $@
 	./$@
 
-git:
+git: clean
 	git add --all
 	git status
 	git commit -m "make git"

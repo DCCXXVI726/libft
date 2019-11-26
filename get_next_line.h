@@ -6,13 +6,13 @@
 /*   By: thorker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 20:11:57 by thorker           #+#    #+#             */
-/*   Updated: 2019/01/14 21:38:25 by thorker          ###   ########.fr       */
+/*   Updated: 2019/01/21 21:57:47 by thorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 32
+# define BUFF_SIZE 1000
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>

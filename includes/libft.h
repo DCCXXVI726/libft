@@ -6,7 +6,7 @@
 /*   By: thorker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 18:25:21 by thorker           #+#    #+#             */
-/*   Updated: 2020/02/04 11:34:02 by thorker          ###   ########.fr       */
+/*   Updated: 2020/06/28 16:52:49 by thorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+void				ft_cleanbuf(char **buf);
 int					ft_advatoi(const char *c);
 int					ft_skip(const char *num);
 void				ft_filedel(t_file **file, int fd);

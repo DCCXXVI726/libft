@@ -6,7 +6,7 @@
 /*   By: thorker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 18:40:26 by thorker           #+#    #+#             */
-/*   Updated: 2019/01/14 21:38:13 by thorker          ###   ########.fr       */
+/*   Updated: 2020/07/05 18:56:34 by thorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,6 @@ int		get_next_line(const int fd, char **line)
 	while (re == 2)
 		re = ft_my_cat(&curr, line);
 	if (re != 1)
-		ft_filedel(&file, fd);
+		ft_filedel(&file, fd, line);
 	return (re);
 }

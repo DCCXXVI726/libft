@@ -6,13 +6,14 @@
 /*   By: thorker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 21:24:55 by thorker           #+#    #+#             */
-/*   Updated: 2019/01/14 21:37:49 by thorker          ###   ########.fr       */
+/*   Updated: 2020/07/05 18:56:51 by thorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
-void	ft_filedel(t_file **file, int fd)
+void	ft_filedel(t_file **file, int fd, char **line)
 {
 	t_file	*curr;
 	t_file	*next;
@@ -34,5 +35,6 @@ void	ft_filedel(t_file **file, int fd)
 	}
 	free(curr->line);
 	free(curr);
+	ft_strdel(line);
 	*file = NULL;
 }
